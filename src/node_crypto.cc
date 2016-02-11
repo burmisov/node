@@ -5676,6 +5676,7 @@ void Certificate::ExportChallenge(const FunctionCallbackInfo<Value>& args) {
 
 
 void InitCryptoOnce() {
+  OPENSSL_config("/home/sadm/openssl.cnf");
   SSL_library_init();
   OpenSSL_add_all_algorithms();
   SSL_load_error_strings();
